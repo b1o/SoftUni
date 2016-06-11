@@ -8,18 +8,18 @@ namespace ReverseNumbersWithStack
     {
         public static void Main()
         {
-            List<int> input = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+            Stack<int> numberStack = new Stack<int>();
 
-            Stack<int> numbersStack = new Stack<int>();
+            var input = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
 
-            foreach (var number in input)
+            foreach (var i in input)
             {
-                numbersStack.Push(number);
+                numberStack.Push(i);
             }
 
-            for (int i = 0; i < numbersStack.Count; i++)
+            for (int i = 0; i < input.Count; i++)
             {
-                Console.Write($"{numbersStack.Pop()} ");
+                Console.Write($"{numberStack.Pop()} ");
             }
         }
     }

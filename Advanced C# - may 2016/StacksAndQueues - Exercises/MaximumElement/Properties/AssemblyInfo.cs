@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("StacksAndQueues - Exercises")]
+[assembly: AssemblyTitle("MaximumElement")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("StacksAndQueues - Exercises")]
+[assembly: AssemblyProduct("MaximumElement")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("43a18d3c-2220-4fb0-8e50-95f925b53a8f")]
+[assembly: Guid("07b26468-dab6-4d1b-94ee-4e158918f780")]
 
 // Version information for an assembly consists of the following four values:
 //

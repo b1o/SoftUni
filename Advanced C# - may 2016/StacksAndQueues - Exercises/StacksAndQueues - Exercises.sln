@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseNumbersWithStack", "ReverseNumbersWithStack\ReverseNumbersWithStack.csproj", "{AD9B8F8E-B0D9-4629-B0F1-E1000C33500B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicStackOperations", "BasicStackOperations\BasicStackOperations.csproj", "{B9A9BCF0-4C69-4F4B-BC73-2ABB4696DEC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaximumElement", "MaximumElement\MaximumElement.csproj", "{07B26468-DAB6-4D1B-94EE-4E158918F780}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{AD9B8F8E-B0D9-4629-B0F1-E1000C33500B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD9B8F8E-B0D9-4629-B0F1-E1000C33500B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD9B8F8E-B0D9-4629-B0F1-E1000C33500B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A9BCF0-4C69-4F4B-BC73-2ABB4696DEC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A9BCF0-4C69-4F4B-BC73-2ABB4696DEC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A9BCF0-4C69-4F4B-BC73-2ABB4696DEC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A9BCF0-4C69-4F4B-BC73-2ABB4696DEC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B26468-DAB6-4D1B-94EE-4E158918F780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B26468-DAB6-4D1B-94EE-4E158918F780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B26468-DAB6-4D1B-94EE-4E158918F780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B26468-DAB6-4D1B-94EE-4E158918F780}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
