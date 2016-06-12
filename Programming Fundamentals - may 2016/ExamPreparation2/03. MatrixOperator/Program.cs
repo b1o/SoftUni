@@ -79,7 +79,7 @@ namespace _03.MatrixOperator
                         {
                             for (int i = 0; i < matrix[position].Count; i++)
                             {
-                                if (matrix[position][i] > 0)
+                                if (matrix[position][i] >= 0)
                                 {
                                     matrix[position].RemoveAt(i);
                                     i--;
@@ -93,7 +93,7 @@ namespace _03.MatrixOperator
                         {
                             if (matrix[i].Count > position)
                             {
-                                if (matrix[i][position] > 0)
+                                if (matrix[i][position] >= 0)
                                 {
                                     matrix[i].RemoveAt(position);
                                 }
