@@ -18,7 +18,7 @@ namespace _08.HandsOfCards
 
             while (input != "JOKER")
             {
-                string[] tokens = input
+                string[] tokens = input.Trim()
                     .Split(new char[] {':', ' ', ','}, StringSplitOptions.RemoveEmptyEntries);
                 string name = tokens[0];
                 HashSet<string> cards = new HashSet<string>();
