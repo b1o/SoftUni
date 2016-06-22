@@ -37,6 +37,24 @@ define(['q'], function(q) {
                 defer.resolve(data);
             },
             error: function (error) {
+                let errorMessage = "Something went wrong";
+                if (error.status == "401") {
+                    errorMessage = "Wrong username or password!"
+                } else if (error.status == "400") {
+                    errorMessage = "Please make sure you've entered both username and passoword"
+                } else if (error.status == "409") {
+                    errorMessage = "Such user already exists!"
+                }
+
+                let n = noty({
+                    text: errorMessage,
+                    animation: {
+                        open: "animated bounceInUp",
+                        close: "animated bounceOutDown"
+                    },
+                    closeWith: [],
+                    timeout:2000
+                });
                 defer.reject(error);
             }
         });

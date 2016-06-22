@@ -1,14 +1,22 @@
-define([], function() {
+define([], function(    ) {
     function HomeController(view) {
         this.view = view;
     }
 
-    HomeController.prototype.loadWelcomeMenu = function(selector) {
-        this.view.showWelcomeMenu(selector);
+    HomeController.prototype.loadRegisterMenu = function(selector) {
+        this.view.showRegisterMenu(selector);
+    };
+
+    HomeController.prototype.loadWelcomeMessage = function(selector) {
+        this.view.showWelcomeMessage(selector);
+    };
+
+    HomeController.prototype.loadLoginMenu = function(selector) {
+        this.view.showLoginMenu(selector);
     };
 
     HomeController.prototype.loadHomeMenu = function(selector) {
-        var data = {
+        let data = {
             username: sessionStorage['username']
         };
 

@@ -4,26 +4,28 @@ define(["Sammy"], function(Sammy) {
         this.view = view;
     }
 
-    UserController.prototype.loadLoginPage = function(selector) {
-        this.view.showLoginPage(selector);
-    };
-
     UserController.prototype.login = function(data) {
         return this.model.login(data)
             .then(function(success) {
+                console.log(success);
                 sessionStorage['sessionId'] = success._kmd.authtoken;
                 sessionStorage['username'] = success.username;
-                sessionStorage['userId'] = success.userId;
-
+                sessionStorage['userId'] = success._id;
+            })
+            .done(function() {
                 Sammy(function() {
-                    this.trigger('redirectUrl', {url: '#/home/'})
+                    this.trigger('redirectUrl', {url: '#/'} )
                 });
-
-            }).done();
-    };
-
-    UserController.prototype.loadRegisterPage = function(selector) {
-        this.view.showRegisterPage(selector);
+                var n = noty({
+                    text: "logged in",
+                    animation: {
+                        open: "animated bounceInUp",
+                        close: "animated bounceOutDown"
+                    },
+                    closeWith: [],
+                    timeout:1200
+                })
+            });
     };
 
     UserController.prototype.register = function(data) {
@@ -31,12 +33,29 @@ define(["Sammy"], function(Sammy) {
             .then(function(success) {
                 sessionStorage['sessionId'] = success._kmd.authtoken;
                 sessionStorage['username'] = success.username;
-                sessionStorage['userId'] = success.userId;
+                sessionStorage['userId'] = success._id;
+
+
+            }).done(function() {
+                Sammy(function() {
+                    this.trigger('redirectUrl', {url: '#/'})
+                });
+                $.notify({
+                    title: "Logged in",
+                    message: "Welcome, " + sessionStorage['username']
+                });
+            });
+    };
+
+    UserController.prototype.logout = function() {
+        return this.model.logout()
+            .then(function(success) {
+                sessionStorage.clear();
 
                 Sammy(function() {
-                    this.trigger('redirectUrl', {url: '#/home/'})
-                });
-            }).done();
+                    this.trigger('redirectUrl', {url: '#/'})
+                })
+            })
     };
 
     return UserController;
