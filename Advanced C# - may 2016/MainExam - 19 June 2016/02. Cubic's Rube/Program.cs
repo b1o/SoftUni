@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _02.Cubic_s_Rube
+﻿namespace _02.Cubic_s_Rube
 {
-    class Program
+    using System;
+    using System.Linq;
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
 
-            int[,,] rube = new int[n,n,n];
+            int[,,] rube = new int[n, n, n];
 
             for (int i = 0; i < n; i++)
             {
@@ -50,7 +47,7 @@ namespace _02.Cubic_s_Rube
                     for (int k = 0; k < n; k++)
                     {
                         sumOfAllCells += rube[i, j, k];
-                        if (rube[i,j,k] == 0)
+                        if (rube[i, j, k] == 0)
                         {
                             unchangedCellsCounter++;
                         }
@@ -61,6 +58,5 @@ namespace _02.Cubic_s_Rube
             Console.WriteLine(sumOfAllCells);
             Console.WriteLine(unchangedCellsCounter);
         }
-
     }
 }

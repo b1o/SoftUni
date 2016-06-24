@@ -1,27 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _04.Cubic_Assault
+﻿namespace _04.Cubic_Assault
 {
-    class MeteorType
-    {
-        public string Name { get; set; }
-        public long quanty { get; set; }
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
-        public MeteorType(string name, long quantity)
-        {
-            this.Name = name;
-            this.quanty = quantity;
-        } 
-    }
-
-    class Region
+    public class Region
     {
-        public string Name { get; set; }
-        public Dictionary<string, long> Meteors { get; set; }
+        private const int CurrencyTransformThreshold = 1000000;
 
         public Region(string name)
         {
@@ -30,39 +15,44 @@ namespace _04.Cubic_Assault
             {
                 ["Green"] = 0,
                 ["Red"] = 0,
-                ["Black"] = 0 
+                ["Black"] = 0
             };
         }
+
+        public string Name { get; set; }
+
+        public Dictionary<string, long> Meteors { get; set; }
 
         public void AddMeteor(string type, long quantity)
         {
             this.Meteors[type] += quantity;
-            if (this.Meteors[type] >= 1000000)
+            if (this.Meteors[type] >= CurrencyTransformThreshold)
             {
+                ////TODO: There should be a better way to do this. But if it looks stupid and it works, it ain't stupid!
                 switch (type)
                 {
                     case "Green":
-                        this.Meteors["Red"] += this.Meteors["Green"]/1000000;
-                        this.Meteors["Green"] = this.Meteors["Green"]%1000000;
+                        this.Meteors["Red"] += this.Meteors["Green"] / CurrencyTransformThreshold;
+                        this.Meteors["Green"] = this.Meteors["Green"] % CurrencyTransformThreshold;
                         if (this.Meteors["Red"] >= 1000000)
                         {
-                            this.Meteors["Black"] += this.Meteors["Red"]/1000000;
-                            this.Meteors["Red"] = this.Meteors["Red"]%1000000;
+                            this.Meteors["Black"] += this.Meteors["Red"] / CurrencyTransformThreshold;
+                            this.Meteors["Red"] = this.Meteors["Red"] % CurrencyTransformThreshold;
                         }
+
                         break;
                     case "Red":
-                        this.Meteors["Black"] += this.Meteors["Red"]/1000000;
-                        this.Meteors["Red"] = this.Meteors["Red"]%1000000;
+                        this.Meteors["Black"] += this.Meteors["Red"] / CurrencyTransformThreshold;
+                        this.Meteors["Red"] = this.Meteors["Red"] % CurrencyTransformThreshold;
                         break;
                 }
             }
-
         }
     }
 
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             List<Region> regions = new List<Region>();
 
@@ -70,7 +60,7 @@ namespace _04.Cubic_Assault
 
             while (input != "Count em all")
             {
-                string[] tokens = input.Trim().Split(new string[] {" -> "}, StringSplitOptions.RemoveEmptyEntries);
+                string[] tokens = input.Trim().Split(new string[] { " -> " }, StringSplitOptions.RemoveEmptyEntries);
                 string regionName = tokens[0];
                 string meteorType = tokens[1];
                 long quantity = long.Parse(tokens[2]);

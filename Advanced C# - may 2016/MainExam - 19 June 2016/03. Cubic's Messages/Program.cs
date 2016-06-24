@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace _03.Cubic_s_Messages
+﻿namespace _03.Cubic_s_Messages
 {
-    class Program
+    using System;
+    using System.Text;
+    using System.Text.RegularExpressions;
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             string input = Console.ReadLine();
 
@@ -20,7 +17,6 @@ namespace _03.Cubic_s_Messages
                 string pattern = @"^([\d]+)([A-Za-z]{" + count + "})([^A-Za-z]*)$";
                 Regex regex = new Regex(pattern);
                 Match match = regex.Match(encrypredMessage);
-
 
                 if (match.Success)
                 {
@@ -46,9 +42,9 @@ namespace _03.Cubic_s_Messages
 
                     Console.WriteLine($"{message} == {verificationCode}");
                 }
+
                 input = Console.ReadLine();
             }
-
         }
     }
 }
