@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. SetsOfElements", "02. S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15. RubiksMatrix", "15. RubiksMatrix\15. RubiksMatrix.csproj", "{F520E63A-3CDD-4C2B-963A-1B0248B863D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16. TargetPractice", "16. TargetPractice\16. TargetPractice.csproj", "{201690CD-2E62-46DC-8A9E-5F1958811C9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{F520E63A-3CDD-4C2B-963A-1B0248B863D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F520E63A-3CDD-4C2B-963A-1B0248B863D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F520E63A-3CDD-4C2B-963A-1B0248B863D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{201690CD-2E62-46DC-8A9E-5F1958811C9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{201690CD-2E62-46DC-8A9E-5F1958811C9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{201690CD-2E62-46DC-8A9E-5F1958811C9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{201690CD-2E62-46DC-8A9E-5F1958811C9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
